@@ -1,3 +1,4 @@
+const bouncingShapes = [];
 const canvas = document.getElementById("myCanvas"), ctx = canvas.getContext("2d");
 const previewCanvas = Object.assign(document.createElement("canvas"), {
     width: canvas.width,
@@ -68,6 +69,14 @@ canvas.addEventListener("mouseup", e => {
   previewCtx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = currentColor;
   draw(ctx, getShape(), startX, startY, w, h);
+  const shape = getShape();
+  bouncingShapes.push({
+    shape, x: startX, y: startY, w, h,
+    dx: Math.random() * 4 + 2,
+    dy: Math.random() * 4 + 2,
+    color: currentColor
+  });
+
 });
 
 canvas.addEventListener("mousemove", e => {
@@ -103,3 +112,15 @@ function draw(c, shape, x, y, w, h) {
     c.closePath(); 
     c.fill();
 }
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  bouncingShapes.forEach(o => {
+    o.x += o.dx; o.y += o.dy;
+      if (o.x < 0 || o.x + o.w > canvas.width) o.dx *= -1;
+      if (o.y < 0 || o.y + o.h > canvas.height) o.dy *= -1;
+      ctx.fillStyle = o.color;
+      draw(ctx, o.shape, o.x, o.y, o.w, o.h);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
