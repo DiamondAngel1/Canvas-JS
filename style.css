@@ -1,0 +1,53 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    justify-self: anchor-center;
+}
+
+#toolbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.shape-group,
+.color-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+canvas.shape-preview {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+.color-btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.color-btn.selected {
+    border: 2px solid black;
+}
+
+#myCanvas {
+    border: 1px solid black;
+    background-image: url(grid-canvas.png);
+    margin: 0 auto;
+    width: 1670px;
+    height: 1000px;
+    background-size: cover
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+}

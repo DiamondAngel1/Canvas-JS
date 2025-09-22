@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Paint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Paint</h1>
+    <div id="toolbar">
+        <div class="shape-group" id="shape-options">
+
+            <label><input type="radio" name="shape" value="square"><canvas class="preview" width="50" height="50"
+                    data-shape="square"></canvas></label>
+            <label><input type="radio" name="shape" value="circle"><canvas class="preview" width="50" height="50"
+                    data-shape="circle"></canvas></label>
+            <label><input type="radio" name="shape" value="diamond"><canvas class="preview" width="50" height="50"
+                    data-shape="diamond"></canvas></label>
+            <label><input type="radio" name="shape" value="triangle" checked><canvas class="preview" width="50"
+                    height="40" data-shape="triangle"></canvas></label>
+            <label><input type="radio" name="shape" value="line"><canvas class="preview" width="50" height="50"
+                    data-shape="line"></canvas></label>
+        </div>
+
+        <div class="color-group" id="color-toolbar">
+
+            <button class="color-btn" data-color="white" style="background:white;"></button>
+            <button class="color-btn selected" data-color="black" style="background:black;"></button>
+            <button class="color-btn" data-color="yellow" style="background:yellow;"></button>
+            <button class="color-btn" data-color="red" style="background:red;"></button>
+            <button class="color-btn" data-color="green" style="background:green;"></button>
+            <button class="color-btn" data-color="blue" style="background:blue;"></button>
+            <button class="color-btn" data-color="cyan" style="background:cyan;"></button>
+            <button class="color-btn" data-color="magenta" style="background:magenta;"></button>
+            <button class="color-btn" data-color="#FFA500" style="background:#FFA500;"></button>
+            <button class="color-btn" data-color="#ADD8E6" style="background:#ADD8E6;"></button>
+            <input type="color" id="customColorPicker" value="#000000" style="height: 40px; width: 40px;">
+        </div>
+    </div>
+
+    <canvas id="myCanvas" width="1670px" height="1000px"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
